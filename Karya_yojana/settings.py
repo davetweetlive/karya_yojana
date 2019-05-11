@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'karya.apps.KaryaConfig',
     'Karma.apps.KarmaConfig',
 ]
 
@@ -50,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Karmayogi.urls'
+ROOT_URLCONF = 'Karya_yojana.urls'
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'Karma/templates')
 
@@ -70,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Karmayogi.wsgi.application'
+WSGI_APPLICATION = 'Karya_yojana.wsgi.application'
 
 
 # Database
