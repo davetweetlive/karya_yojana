@@ -8,7 +8,10 @@ class IndexView(View):
 
     @method_decorator(login_required)
     def get(self, request, *args, **kwargs):
-        return render(request, 'base.html', {})
+        return render(request, 'karya/index.html', {})
 
     def post(self, request, *kwargs):
         pass
+
+class CreateAccountView():
+    pass
