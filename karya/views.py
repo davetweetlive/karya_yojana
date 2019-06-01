@@ -4,8 +4,11 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.generic.base import TemplateView
 
-class IndexView(View):
+from django.urls import reverse_lazy
+from django.views import generic
+from . forms import RegistrationForm
 
+class IndexView(View):
     @method_decorator(login_required)
     def get(self, request, *args, **kwargs):
         # return render(request, 'karya/index.html', {})
@@ -14,6 +17,10 @@ class IndexView(View):
     def post(self, request, *kwargs):
         pass
 
-class CreateAccountView(TemplateView):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'karya/register.html', {})
+class CreateAccountView(generic.CreateView):
+    form_class = RegistrationForm
+    print(form_class)
+    success_url = reverse_lazy('logout_url')
+    template_name = 'karya/register.html'
+    # def get(self, request, *args, **kwargs):
+    #     return render(request, 'karya/register.html', {})
