@@ -24,5 +24,5 @@ urlpatterns = [
 
     path('login/', LoginView.as_view(template_name = 'karya/login.html'), name='login_url'),
     path('logout/', LogoutView.as_view(), name='logout_url'),
-    path('password_reset/', PasswordResetView.as_view(), name='password_reset'),
+    path('password_reset/', PasswordResetView.as_view(template_name = 'karya/forgot-password.html'), name='password_reset'),
 ]
