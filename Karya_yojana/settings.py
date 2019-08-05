@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'karya.apps.KaryaConfig',
+    'task_app.apps.TaskAppConfig',
+    'team_app.apps.TeamAppConfig',
     'django.contrib.sites',
 
     'allauth',

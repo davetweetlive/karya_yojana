@@ -19,12 +19,9 @@ class IndexView(View):
     def post(self, request, *kwargs):
         pass
 
-class CreateAccountView(generic.CreateView):
-    form_class  = RegistrationForm
-    success_url = reverse_lazy('logout_url')
-    template_name = 'karya/register.html'
-
-
+class CreateTaskView:
+    pass
+    
 class DisplayProfileView(TemplateView):
     def get(self, request, *args, **kwargs):
         return render(request, 'karya/profile.html', {})
@@ -32,3 +29,10 @@ class DisplayProfileView(TemplateView):
 
     def post():
         pass
+
+
+class CreateAccountView(generic.CreateView):
+    """The create account view does nothing but, registers users getiing thire RegistrationForm details"""
+    form_class  = RegistrationForm
+    success_url = reverse_lazy('logout_url')
+    template_name = 'karya/register.html'
